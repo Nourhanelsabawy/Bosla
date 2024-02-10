@@ -44,9 +44,15 @@ namespace BoslaAPI.Controllers
             PythonEngine.Shutdown();
 
             if (AlzheimerOutput.Result == "0.0")
-                return Ok("Your mind shines with resilience, lighting up paths of hope and strength. ✨");
+            {
+                var msg = "Your mind shines with resilience, lighting up paths of hope and strength. ✨";
+                return Ok(new { Result = msg });
+            }
             else
-                return Ok("Unfortunately, You suffer from Alzheimer 😢");
+            {
+                var msg = "Unfortunately, You suffer from Alzheimer 😢";
+                return Ok(new { Result = msg });
+            }
         }
     }
 }

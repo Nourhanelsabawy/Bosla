@@ -44,9 +44,15 @@ namespace BoslaAPI.Controllers
             PythonEngine.Shutdown();
 
             if (HeartOutput.Result == "0")
-                return Ok("Fantastic news! Your heart's health deserves a standing ovation! 🌟");
+            {
+                var msg = "Fantastic news! Your heart's health deserves a standing ovation! 🌟";
+                return Ok(new { Result = msg });
+            }
             else
-                return Ok("Unfortunately, You have a heart disease 😢");
+            {
+                var msg = "Unfortunately, You have a heart disease 😢";
+                return Ok(new { Result = msg });
+            }
         }
     }
 }

@@ -45,9 +45,15 @@ namespace BoslaAPI.Controllers
             PythonEngine.Shutdown();
 
             if (DiabetesOutput.Result == "No")
-                return Ok("In the symphony of managing diabetes, your proactive approach harmonizes with health and vitality. 🎵");
+            {
+                var msg = "In the symphony of managing diabetes, your proactive approach harmonizes with health and vitality. 🎵";
+                return Ok(new { Result = msg });
+            }
             else
-                return Ok("Unfortunately, You are diabetic 😢");
+            {
+                var msg = "Unfortunately, You are diabetic 😢";
+                return Ok(new { Result = msg });
+            }
         }
     }
 }

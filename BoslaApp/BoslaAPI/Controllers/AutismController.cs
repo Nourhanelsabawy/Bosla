@@ -44,9 +44,15 @@ namespace BoslaAPI.Controllers
             PythonEngine.Shutdown();
 
             if (AutismOutput.Result == "0")
-                return Ok("Your uniqueness is a kaleidoscope of strengths, painting a canvas of extraordinary potential. 💪");
+            {
+                var msg = "Your uniqueness is a kaleidoscope of strengths, painting a canvas of extraordinary potential. 💪";
+                return Ok(new { Result = msg });
+            }
             else
-                return Ok("Unfortunately, You are autistic 😢");
+            {
+                var msg = "Unfortunately, You are autistic 😢";
+                return Ok(new { Result = msg });
+            }
         }
     }
 }
